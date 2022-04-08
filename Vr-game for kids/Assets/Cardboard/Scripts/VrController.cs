@@ -18,11 +18,13 @@ public class VrController : MonoBehaviour {
 		Ray ray = new Ray (transform.position, transform.forward);
 		if (Physics.Raycast (ray, out hit)) {
 			if (hit.transform.gameObject == g1) {
+				print("Навел");
 				g1.GetComponent<MeshRenderer> ().material.color = Color.red;
 				g1.transform.position = Vector3.MoveTowards (g1.transform.position, new Vector3 (g1.transform.position.x, g1.transform.position.y, 2.5f), Time.deltaTime * 1f);
 				g2.GetComponent<MeshRenderer> ().material.color = Color.green;
 				g2.transform.position = Vector3.MoveTowards (g2.transform.position, gV2, Time.deltaTime * 1f);
 			} else if (hit.transform.gameObject == g2) {
+				print("Навел");
 				g1.GetComponent<MeshRenderer> ().material.color = Color.green;
 				g1.transform.position = Vector3.MoveTowards (g1.transform.position,gV1, Time.deltaTime * 1f);
 				g2.GetComponent<MeshRenderer> ().material.color = Color.red;
